@@ -1,0 +1,383 @@
+/*===============================================
+ Common CSS 
+ ===============================================*/
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.container:after,
+.container:before{
+    content: "";
+    display: table;
+    clear: both;
+}
+.banner-area{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: #D4006F;
+    padding: 40px 30px;
+    border-radius: 10px;
+}
+
+.banner-area .banner-text h2{
+    color: #fff;
+    font-size: 35px;
+}
+.banner-area .banner-text p{
+    width: 100%;
+    color: #fff;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.elipsis-opt{
+    visibility: hidden;
+}
+/*Button Animation*/
+.banner-area .banner-text button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #D400D2;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.banner-area .banner-text button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.banner-area .banner-text button:active {
+    color: #000
+}
+
+.banner-area .banner-text button:active:after {
+    background: transparent;
+}
+
+.banner-area .banner-text button:hover:before {
+    opacity: 1;
+}
+
+.banner-area .banner-text button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #D400D2;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+.banner-area .banner-img img{
+    width: 100%;
+}
+
+/*===============================================
+Main Section
+ ===============================================*/
+.content-area{
+    margin: 50px 0;
+}
+.main-section{
+    display: grid;
+    grid-template-columns: 280px auto;
+    grid-column-gap: 30px;
+}
+.nav-section ul{
+    background: #D4006F;
+    border-radius: 10px;
+    padding: 15px 0;
+    margin: 0;
+    text-align: center;
+}
+.nav-section ul li{
+    list-style: none;
+}
+.nav-section ul li a{
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+    font-weight: 700;
+    background: #fff;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 85%;
+}
+.nav-section ul li a.active{
+     background: #D400D2;
+     color: #fff;
+}
+.content-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+}
+.content-item{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.content-item img{
+    width: 100%;
+}
+.content-item .item-text{
+    padding: 10px;
+}
+.content-item button{
+    padding: 5px 10px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+.content-item p{
+}
+.content-item .item-icon{
+    display: flex;
+    grid-column-gap: 20px;
+    color: #999;
+    font-size: 15px;
+}
+.content-item .item-icon .clock i,
+.content-item .item-icon .comment i{
+    margin-right: 7px;
+}
+/*Upcoming Page*/
+.content-item .country-information{
+    padding: 40px 15px 0px 15px;
+}
+.content-item .country-information .flag{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+    font-weight: 800;
+}
+.content-item .country-information img{
+    width: 100%;
+}
+.content-item .country-information .flag-text{
+    text-align: center;
+}
+.content-item .country-information .flag-text h4{
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.content-item .country-information .flag-text p{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.view-all{
+    margin: 50px 0;
+    text-align: center;
+    display: none;
+}
+.view-all button{
+    background: #DD0000;
+    color: #fff;
+    font-weight: 800;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/*===============================================
+Footer Section
+ ===============================================*/
+ .footer-area{
+    background: #D4006F;
+ }
+ .footer-content{
+    text-align: center;
+    padding: 50px 75px;
+ }
+ .footer-content h2{
+    color: #fff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 15px;
+ }
+.footer-content .footer-nav ul{
+    padding: 0;
+    margin: 0;
+}
+.footer-content .footer-nav ul li{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.footer-content .footer-nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+.social-icon{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.social-icon ul{
+    padding: 0;
+    margin: 0;
+}
+.social-icon ul li{
+    list-style: none;
+    display: inline-block;
+}
+.social-icon ul li a{
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 22px;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+/*===============================================
+Responsive Section
+ ===============================================*/
+@media screen and (max-width: 992px){
+    .banner-area .banner-text h2 {
+        font-size: 22px;
+    }
+    .banner-area .banner-text  {
+        font-size: 15px;
+    }
+    .content-item p {
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .footer-content .footer-nav ul li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .footer-content .footer-nav ul li a {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 850px){
+    .banner-area .banner-text h2 {
+        font-size: 25px;
+        margin: 0;
+        line-height: 40px;
+    }
+    .banner-area .banner-text p {
+        font-size: 18px;
+    }
+    .nav-section ul li a {
+        font-size: 15px;
+    }
+    .main-section{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+    }
+    .nav-section ul{
+        background: #fff;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .nav-section ul li a{
+        border: 1px solid #ddd;
+    }
+    .content-section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .view-all{
+        display: block;
+    }
+    .footer-content .footer-nav ul li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .footer-content .footer-nav ul li a {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width: 767px){
+    .banner-area{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 100px;
+    }
+    .banner-area .banner-text{;
+        margin-bottom: 50px;
+    }
+    .elipsis-opt{
+        visibility: visible;
+    }
+    .nav-section ul{
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-section ul li a{
+        width: 50%;
+    }
+    .content-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .content-item{
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .footer-content .footer-nav ul li{
+        display: block;
+        margin: 18px 0;
+    }
+    .footer-content .footer-nav ul li a{
+        font-size: 18px;
+        color: #ddd;
+    }
+}
